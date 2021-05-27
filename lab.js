@@ -6,6 +6,10 @@
 
 //Code here
 
+let me = {
+  name: 'Avery',
+  age:'25'
+}
 
 
 //////////////////////////// PROBLEM 2 ////////////////////////////
@@ -16,22 +20,26 @@
 //and goodBoy (a boolean).
 
 //Code here
-
-
+ let dog = {
+  name: 'Zoey',
+  color: 'Red',
+  age: '7',
+  goodBoy: true
+}
 
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
 
 //Code here
 
-
+// console.log(dog.name)
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
 
 //Code here
 
-
+// console.log(dog['color'])
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
 /*
@@ -40,6 +48,14 @@
 */
 
 //Code here
+let favoriteThing = {
+  band: ['Hozier', 'half-alive', 'Gregory Alan Isakov'],
+  food: ['sushi', 'Mexican', 'Wine'],
+  person: ['Thomas', 'Bree', 'Cody'],
+  book: ['The Code Breaker', 'The Fisherman', 'The Imago Sequence'],
+  movie: ['Pans Labrynth', 'Paranorman'],
+  holiday: ['Christmas', 'Halloween']
+}
 
 
 /*
@@ -48,6 +64,8 @@
 
 //Code here
 
+favoriteThing.car = 'Fit'
+favoriteThing.brand = 'Honda'
 
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
@@ -56,7 +74,12 @@
 
 //Code here
 
+favoriteThing.food = 'Chicken Nuggets'
+favoriteThing.book = 'Harry Potter'
 
+// for (let key in favoriteThing){
+//   console.log(favoriteThing[key])
+// }
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
 // Do not edit the code below.
@@ -78,14 +101,22 @@ var user = {
 
 //Code Here
 
+user.name = 'Bryan G. Smith'
+user.email = 'bryan.smith@devmounta.in'
+
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
 /*
-  Using the user object above, delete the users age off of the object.
+Using the user object above, delete the users age off of the object.
 */
 
 //Code Here
 
+user.age = ''
+
+// for (let key in user){
+//   console.log(user[key])
+// }
 
 //////////////////////////// PROBLEM 8 ////////////////////////////
 /*
@@ -96,7 +127,20 @@ var user = {
 
 //Code here
 
+class Cat{
+  constructor(name, age, color){
+    this.name = name;
+    this.age = age;
+    this.color = color;
+  }
+  getReport(){
+    console.log(`My cats name is ${this.name}`)
+  }
+}
 
+const myCat = new Cat('Nar', 2, 'orange')
+
+// myCat.getReport()
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 /*
@@ -107,6 +151,21 @@ var user = {
 */
 
 //Code here
+
+class wizard {
+  constructor(name, age, favoriteSpell){
+    this.name = name;
+    this.age = age;
+    this.favoriteSpell = favoriteSpell;
+  }
+  castSpell(){
+    console.log(`${this.name} has cast ${this.favoriteSpell}`)
+  }
+  }
+
+const ave = new wizard('Avery the Great', 25, 'Fireball')
+
+// ave.castSpell()
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
 /*
@@ -133,19 +192,40 @@ var user = {
 
 //Code Here
 
-  
+class Phone {
+  constructor (brand, model, storage, color, price, soldProperties){
+    this.brand = brand;
+    this.model = model;
+    this.storage = storage;
+    this.color = color;
+    this.price = price;
+    this.soldProperties = false;
+  }
+    sell(){
+      this.soldProperties = true;
+      console.log(`${this.brand} ${this.model} has been sold`)
+    }
+    changePrice(newPrice){
+      this.price = newPrice
+    }
+}
+
+
 /*
-    Next make three new phone instances using your class.
-    Send in values of your choice. They should match these data types:
-    - brand: string
-    - model: string
-    - storage: number
-    - color: string
-    - price: number
+Next make three new phone instances using your class.
+Send in values of your choice. They should match these data types:
+- brand: string
+- model: string
+- storage: number
+- color: string
+- price: number
 */
 
 //Code Here
 
+const phone1 = new Phone('Apple', 'Iphone', 1, 'Black', 100)
+const phone2 = new Phone('OnePlus', '9', 2, 'Blue', 75)
+const phone3 = new Phone('Samsung', 'Galaxy', 3, 'White', 250)
 /* 
   Call the changePrice function on one of your phones, 
   don't forget to pass in a new price 
@@ -155,6 +235,9 @@ var user = {
 
 //Code Here 
 
+phone3.changePrice(150)
+
+// console.log(phone3)
 
 /*
   Now call the sell method on one of your other phone objects
@@ -164,6 +247,9 @@ var user = {
 
 //Code Here 
 
+// phone2.sell()
+
+// console.log(phone2)
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
 
@@ -183,7 +269,10 @@ const colors = {
 
 //Code Here 
 
+let colorscopy = {...colors}
 
+
+// console.log(colorscopy)
 
 /*
  Now use the spread operator to combine the following 2 objects into one. 
@@ -211,6 +300,9 @@ const shippingInfo = {
 
 //Code Here
 
+let helensInfo = {...contactInfo, ...shippingInfo}
+
+console.log(helensInfo)
 
 //Print helensInfo to see what it looks like, there should be no repeating properties.
 
